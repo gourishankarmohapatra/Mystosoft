@@ -478,3 +478,13 @@
   #successModal > div h4 { font-size: var(--text-xl); }
   #successModal > div p { font-size: var(--text-xs); }
 }
+
+/* ---------- Mobile Section Spacing (Subpages) ---------- */
+@media (max-width: 768px) {
+  .about-content { padding: var(--space-10) 0; }
+  .section-header { margin-bottom: var(--space-8); }
+}
+@media (max-width: 480px) {
+  .about-content { padding: var(--space-8) 0; }
+  .section-header { margin-bottom: var(--space-6); }
+}
