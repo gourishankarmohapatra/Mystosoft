@@ -406,6 +406,13 @@ body:not(.dark) .btn-secondary:hover {
   .footer-columns { grid-template-columns: 1fr 1fr; }
   .footer-bottom { flex-direction: column; gap: var(--space-4); text-align: center; }
 }
+@media (max-width: 480px) {
+  .footer { padding: var(--space-10) 0 var(--space-6); }
+  .footer-columns { grid-template-columns: 1fr; gap: var(--space-6); }
+  .footer-tagline { max-width: 100%; }
+  .footer-social { flex-wrap: wrap; }
+  .footer-whatsapp { font-size: 0.625rem; padding: 6px 10px; }
+}
 
 @keyframes pulse {
   0%, 100% { opacity: 1; }

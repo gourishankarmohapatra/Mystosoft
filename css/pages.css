@@ -12,6 +12,13 @@
   position: relative;
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  .page-hero { padding: calc(var(--nav-height) + var(--space-12)) 0 var(--space-10); }
+}
+@media (max-width: 480px) {
+  .page-hero { padding: calc(var(--nav-height) + var(--space-8)) 0 var(--space-8); }
+  .page-hero p { font-size: var(--text-sm); padding: 0 var(--space-4); }
+}
 .page-hero::before {
   content: '';
   position: absolute;
@@ -131,6 +138,14 @@
   .about-grid { grid-template-columns: 1fr; }
   .about-stats { grid-template-columns: 1fr; }
 }
+@media (max-width: 480px) {
+  .about-content { padding: var(--space-10) 0; }
+  .about-text h3 { font-size: var(--text-2xl); }
+  .about-stat { padding: var(--space-6); }
+  .about-stat .number { font-size: var(--text-3xl); }
+  .timeline-item { padding-bottom: var(--space-6); }
+  .timeline-item h5 { font-size: var(--text-lg); }
+}
 
 /* ---------- Services Page ---------- */
 .services-detail-grid {
@@ -219,10 +234,23 @@
   .process-grid { grid-template-columns: repeat(2, 1fr); }
   .process-step::after { display: none; }
 }
+@media (max-width: 480px) {
+  .services-detail-grid { gap: var(--space-4); }
+  .service-detail-card { padding: var(--space-6); }
+  .service-detail-card h5 { font-size: var(--text-xl); }
+  .process-grid { grid-template-columns: 1fr; gap: var(--space-4); }
+  .process-section { padding: var(--space-10) 0; }
+  .process-number { width: 48px; height: 48px; font-size: var(--text-base); }
+  .process-step h5 { font-size: var(--text-base); }
+}
 
 /* ---------- Projects Page ---------- */
 .projects-content {
   padding: var(--space-16) 0;
+}
+@media (max-width: 480px) {
+  .projects-content { padding: var(--space-10) 0; }
+  .projects-count { margin-bottom: var(--space-4); }
 }
 .projects-count {
   font-family: var(--font-mono);
@@ -315,6 +343,13 @@
 @media (max-width: 768px) {
   .culture-grid { grid-template-columns: 1fr; }
   .job-card { flex-direction: column; align-items: flex-start; gap: var(--space-4); }
+}
+@media (max-width: 480px) {
+  .culture-card { padding: var(--space-6); }
+  .careers-content { padding: var(--space-10) 0; }
+  .job-card { padding: var(--space-5); }
+  .job-card-info h5 { font-size: var(--text-base); }
+  .job-card-meta { flex-direction: column; gap: var(--space-2); }
 }
 
 /* ---------- Contact Page ---------- */
@@ -425,4 +460,21 @@
 }
 @media (max-width: 768px) {
   .contact-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .contact-content { padding: var(--space-10) 0; }
+  .contact-info h3 { font-size: var(--text-2xl); }
+  .contact-item .info .value { font-size: var(--text-xs); }
+  .contact-form-wrapper { padding: var(--space-6); }
+  .form-group input, .form-group textarea, .form-group select { padding: 10px 12px; font-size: var(--text-xs); }
+}
+
+/* ---------- Success Modal ---------- */
+#successModal > div {
+  transition: padding var(--duration-normal);
+}
+@media (max-width: 480px) {
+  #successModal > div { padding: 1.5rem !important; border-radius: 14px !important; }
+  #successModal > div h4 { font-size: var(--text-xl); }
+  #successModal > div p { font-size: var(--text-xs); }
 }

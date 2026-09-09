@@ -15,6 +15,12 @@
   overflow: hidden;
   background: var(--color-black);
 }
+@media (max-width: 768px) {
+  .hero { min-height: 600px; }
+}
+@media (max-width: 480px) {
+  .hero { min-height: 500px; }
+}
 .hero-canvas {
   position: absolute;
   top: 0; left: 0;
@@ -27,6 +33,16 @@
   text-align: center;
   max-width: 800px;
   padding: 0 var(--space-8);
+}
+@media (max-width: 768px) {
+  .hero-content { padding: 0 var(--space-4); }
+}
+@media (max-width: 480px) {
+  .hero-content { padding: 0 var(--space-4); }
+  .hero-logo { width: 60px; }
+  .hero-subtitle { font-size: var(--text-base); }
+  .hero-buttons { gap: var(--space-3); }
+  .hero-buttons .btn { padding: 10px 20px; font-size: var(--text-xs); }
 }
 .hero-label {
   font-family: var(--font-mono);
@@ -87,6 +103,14 @@
   color: var(--color-gray-500);
   letter-spacing: 0.06em;
   text-align: center;
+  width: 90%;
+  max-width: 500px;
+}
+@media (max-width: 768px) {
+  .hero-globe-info { bottom: var(--space-6); font-size: 0.625rem; }
+}
+@media (max-width: 480px) {
+  .hero-globe-info { bottom: var(--space-4); font-size: 0.5625rem; letter-spacing: 0.03em; }
 }
 .hero-globe-info .telemetry {
   color: var(--color-accent);
@@ -100,6 +124,12 @@
   min-height: 600px;
   overflow: hidden;
   background: var(--color-black);
+}
+@media (max-width: 768px) {
+  .perspective-section { min-height: 400px; }
+}
+@media (max-width: 480px) {
+  .perspective-section { min-height: 300px; }
 }
 .perspective-canvas {
   position: absolute;
@@ -139,6 +169,12 @@
   color: var(--color-gray-500);
   text-align: right;
   letter-spacing: 0.06em;
+}
+@media (max-width: 768px) {
+  .perspective-stats { bottom: var(--space-6); right: var(--space-6); }
+}
+@media (max-width: 480px) {
+  .perspective-stats { bottom: var(--space-4); right: var(--space-4); font-size: 0.625rem; }
 }
 .perspective-stats .value { color: var(--color-accent); }
 
@@ -195,6 +231,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-6);
+}
+@media (max-width: 480px) {
+  .service-card { padding: var(--space-6); }
 }
 .service-card {
   background: var(--color-white);
@@ -263,6 +302,10 @@
   margin-bottom: var(--space-10);
   flex-wrap: wrap;
 }
+@media (max-width: 480px) {
+  .portfolio-filters { gap: var(--space-1); margin-bottom: var(--space-6); }
+  .filter-btn { padding: 6px 14px; font-size: var(--text-xs); }
+}
 .filter-btn {
   padding: 8px 20px;
   font-size: var(--text-sm);
@@ -283,6 +326,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: var(--space-6);
+}
+@media (max-width: 768px) {
+  .portfolio-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-4); }
+}
+@media (max-width: 480px) {
+  .portfolio-grid { grid-template-columns: 1fr; gap: var(--space-4); }
 }
 .project-card {
   background: var(--color-gray-900);
@@ -606,6 +655,15 @@
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-6);
 }
+@media (max-width: 900px) {
+  .methodology-timeline { grid-template-columns: repeat(2, 1fr); }
+  .methodology-timeline::before { display: none; }
+  .methodology-step-dot { display: none; }
+}
+@media (max-width: 480px) {
+  .methodology-timeline { grid-template-columns: 1fr; }
+  .methodology-step { padding: var(--space-6); }
+}
 .methodology-timeline::before {
   content: '';
   position: absolute;
@@ -686,6 +744,20 @@
   gap: var(--space-16);
   align-items: start;
 }
+@media (max-width: 1024px) {
+  .whatwedo-layout { grid-template-columns: 260px 1fr; gap: var(--space-10); }
+}
+@media (max-width: 900px) {
+  .whatwedo-layout { grid-template-columns: 1fr; gap: var(--space-8); }
+  .whatwedo-tabs { flex-direction: row; flex-wrap: wrap; gap: var(--space-2); }
+  .whatwedo-tab { padding: var(--space-3) var(--space-4); }
+}
+@media (max-width: 480px) {
+  .whatwedo-layout { gap: var(--space-6); }
+  .whatwedo-tabs { gap: var(--space-1); }
+  .whatwedo-tab { padding: var(--space-2) var(--space-3); font-size: var(--text-xs); }
+  .whatwedo-tab-num { min-width: 20px; font-size: var(--text-xs); }
+}
 .whatwedo-tabs {
   display: flex;
   flex-direction: column;
@@ -742,6 +814,15 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--space-10);
   align-items: center;
+}
+@media (max-width: 900px) {
+  .whatwedo-content.active { grid-template-columns: 1fr; gap: var(--space-6); }
+}
+@media (max-width: 480px) {
+  .whatwedo-content.active { gap: var(--space-4); }
+  .whatwedo-info-desc { font-size: var(--text-sm); }
+  .whatwedo-bullets { gap: var(--space-2); }
+  .whatwedo-bullet { font-size: var(--text-xs); }
 }
 @keyframes fadeSlideUp {
   from { opacity: 0; transform: translateY(12px); }
@@ -1069,6 +1150,11 @@
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-6);
 }
+@media (max-width: 480px) {
+  .testimonials-grid { gap: var(--space-4); }
+  .testimonial-card { padding: var(--space-6); }
+  .testimonial-text { font-size: var(--text-sm); }
+}
 .testimonial-card {
   background: var(--color-white);
   border-radius: var(--radius-xl);
@@ -1136,6 +1222,12 @@
 .pricing-section {
   background: var(--color-gray-50);
   position: relative;
+}
+@media (max-width: 480px) {
+  .pricing-card { padding: var(--space-6); }
+  .pricing-price { font-size: var(--text-4xl); }
+  .pricing-features { gap: 8px; margin: var(--space-4) 0 var(--space-6); }
+  .pricing-btn { padding: 12px 16px; font-size: 0.625rem; }
 }
 .pricing-section::before {
   content: '';
@@ -1375,6 +1467,11 @@
   flex-direction: column;
   gap: var(--space-4);
 }
+@media (max-width: 480px) {
+  .faq-question { padding: var(--space-4) var(--space-5); }
+  .faq-question-text { font-size: var(--text-sm); }
+  .faq-answer-inner { padding: 0 var(--space-5) var(--space-4); font-size: var(--text-xs); }
+}
 .faq-item {
   background: var(--color-white);
   border-radius: var(--radius-lg);
@@ -1457,6 +1554,9 @@
   border-radius: var(--radius-xl);
   padding: var(--space-10);
   border: 1px solid var(--color-gray-100);
+}
+@media (max-width: 480px) {
+  .home-contact-form { padding: var(--space-6); }
 }
 .home-contact-form .form-group {
   margin-bottom: var(--space-5);
