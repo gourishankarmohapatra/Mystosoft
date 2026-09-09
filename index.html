@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mystosoft — Engineering Digital Experiences</title>
+  <meta name="description" content="Futuristic web development, UI/UX design, and ecommerce experiences for bold brands.">
+  <link rel="icon" href="Mystosoft Logos/Mystosoft Favicon Logo.png" type="image/png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/homepage.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+    :root { --font-display: 'Inter', -apple-system, sans-serif; --font-mono: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="dark">
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen">
+    <canvas id="loadingCanvas"></canvas>
+    <div class="loading-orb"></div>
+    <div class="loading-text">INITIALIZING SYSTEMS...</div>
+    <div class="loading-bar"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <img src="Mystosoft Logos/Mystosoft Header Logo.png" alt="Mystosoft" class="logo-icon">
+      </a>
+      <div class="navbar-links">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="services.html">SERVICES</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="careers.html">CAREERS</a>
+        <a href="contact.html">CONTACT</a>
+      </div>
+      <div class="navbar-actions">
+        <button class="sound-toggle" aria-label="Toggle sound">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+        </button>
+        <div class="nav-toggle">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <canvas id="globeCanvas" class="hero-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-label">
+        <span class="line"></span>
+        <span>NET_NODE_MAP: SHIELD_ON</span>
+        <span class="line"></span>
+      </div>
+      <img src="Mystosoft Logos/Mystosoft.png" alt="Mystosoft" class="hero-logo">
+      <h1 class="hero-title">
+        Engineering <span class="accent">Digital</span><br>Experiences
+      </h1>
+      <p class="hero-subtitle">
+        We build software that ships — web, mobile, and AI for ambitious founders. Futuristic web development, UI/UX design, and ecommerce experiences.
+      </p>
+      <div class="hero-buttons">
+        <a href="contact.html" class="btn btn-primary btn-large btn-shimmer">START A PROJECT</a>
+        <a href="projects.html" class="btn btn-secondary btn-large">VIEW WORK</a>
+      </div>
+    </div>
+    <div class="hero-globe-info">
+      <span class="telemetry">3D_GLOBE_ONLINE</span> — HOVER NEAR MARKERS TO SYNC TELEMETRY
+    </div>
+  </section>
+
+  <!-- Perspective Grid Section -->
+  <section class="perspective-section">
+    <canvas id="gridCanvas" class="perspective-canvas"></canvas>
+    <div class="perspective-content">
+      <div class="perspective-label">spat_world_grid.sys</div>
+      <h2 class="perspective-title">Build Beyond<br>Boundaries</h2>
+    </div>
+    <div class="perspective-stats">
+      <div>VEL_Z: <span class="value" id="velCounter">0.00</span></div>
+      <div>SCROLL TO WARP PERSPECTIVE GRID</div>
+    </div>
+  </section>
+
+  <!-- How We Work (Methodology) -->
+  <section class="methodology-section section">
+    <div class="container-wide">
+      <div class="section-header reveal">
+        <div class="section-label">[ METHODOLOGY ]</div>
+        <h2 class="section-title section-title--metallic">How We Work</h2>
+        <div class="methodology-subtitle">A process built for speed, not meetings.</div>
+      </div>
+      <div class="methodology-timeline stagger-children reveal">
+        <div class="methodology-step">
+          <div class="methodology-step-dot"></div>
+          <div class="methodology-step-number">01</div>
+          <div class="methodology-step-title">DISCOVER</div>
+          <div class="methodology-step-tag">[WEEK 1]</div>
+          <p>We dig into your goals, users, and constraints. No fluff — just clarity.</p>
+        </div>
+        <div class="methodology-step">
+          <div class="methodology-step-dot"></div>
+          <div class="methodology-step-number">02</div>
+          <div class="methodology-step-title">DESIGN</div>
+          <div class="methodology-step-tag">[WEEKS 2-3]</div>
+          <p>Wireframes, component library, and a live prototype you can click through.</p>
+        </div>
+        <div class="methodology-step">
+          <div class="methodology-step-dot"></div>
+          <div class="methodology-step-number">03</div>
+          <div class="methodology-step-title">BUILD</div>
+          <div class="methodology-step-tag">[WEEKS 4-10]</div>
+          <p>Iterative sprints with weekly demos. You see real progress, not status updates.</p>
+        </div>
+        <div class="methodology-step">
+          <div class="methodology-step-dot"></div>
+          <div class="methodology-step-number">04</div>
+          <div class="methodology-step-title">SHIP</div>
+          <div class="methodology-step-tag">[ONGOING]</div>
+          <p>Production deploy, monitoring, and a support plan. We don't disappear at launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do (Tabbed Section) -->
+  <section class="whatwedo-section section" id="services">
+    <div class="container-wide">
+      <div class="section-header reveal">
+        <div class="section-label">[ EXCELLENCE DELIVERED ]</div>
+        <h2 class="section-title section-title--metallic">What We Do</h2>
+      </div>
+      <div class="whatwedo-layout reveal">
+        <div class="whatwedo-tabs">
+          <button class="whatwedo-tab active" data-tab="web">
+            <span class="whatwedo-tab-num">01.</span>
+            <span class="whatwedo-tab-label">WEB APPLICATIONS</span>
+          </button>
+          <button class="whatwedo-tab" data-tab="mobile">
+            <span class="whatwedo-tab-num">02.</span>
+            <span class="whatwedo-tab-label">MOBILE APPLICATIONS</span>
+          </button>
+          <button class="whatwedo-tab" data-tab="ai">
+            <span class="whatwedo-tab-num">03.</span>
+            <span class="whatwedo-tab-label">AI INTEGRATIONS</span>
+          </button>
+          <button class="whatwedo-tab" data-tab="brand">
+            <span class="whatwedo-tab-num">04.</span>
+            <span class="whatwedo-tab-label">BRAND &amp; DESIGN</span>
+          </button>
+        </div>
+
+        <!-- Tab: Web Applications -->
+        <div class="whatwedo-content active" data-content="web">
+          <div class="whatwedo-info">
+            <div class="whatwedo-info-label">[ CORE DEVELOPMENT ]</div>
+            <h3 class="whatwedo-info-title">WEB APPLICATIONS</h3>
+            <p class="whatwedo-info-desc">React &amp; Next.js apps, dashboards, SaaS platforms. From MVP to enterprise scale. We write high-performance frontend systems that look gorgeous and perform flawlessly.</p>
+            <div class="whatwedo-bullets">
+              <div class="whatwedo-bullet">Server-Side Rendering (SSR)</div>
+              <div class="whatwedo-bullet">Edge Network Deployment</div>
+              <div class="whatwedo-bullet">Custom Component Frameworks</div>
+            </div>
+            <a href="services.html" class="whatwedo-link">LEARN MORE <span>&rarr;</span></a>
+          </div>
+          <div class="whatwedo-preview">
+            <div class="preview-terminal">
+              <div class="term-header">
+                <span class="term-dot"></span><span class="term-dot"></span>
+                <span class="term-label">COMPILER::WEB-APPS</span>
+              </div>
+              <div class="term-line"><span class="prompt">&gt;</span> <span class="cmd">npx qubnix-cli init --matrix</span></div>
+              <div class="term-line"><span class="sys">[system]</span> Booting Next.js environment core v16.2...</div>
+              <div class="term-line"><span class="sys">[system]</span> Synchronizing WebGL frame boundaries...</div>
+              <div class="term-line"><span class="sys">[system]</span> Instantiating Next.js App Router API...</div>
+              <div class="term-line"><span class="ok">[success]</span> Server-side rendering cache initialized: OK</div>
+              <div class="term-line"><span class="prompt">&gt;</span> <span class="cmd">npm run build --pro</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab: Mobile Applications -->
+        <div class="whatwedo-content" data-content="mobile">
+          <div class="whatwedo-info">
+            <div class="whatwedo-info-label">[ CROSS-PLATFORM ]</div>
+            <h3 class="whatwedo-info-title">MOBILE APPLICATIONS</h3>
+            <p class="whatwedo-info-desc">Flutter &amp; React Native. iOS + Android from a single codebase without compromise. We construct native, hardware-optimized apps with 60fps graphics and zero latency.</p>
+            <div class="whatwedo-bullets">
+              <div class="whatwedo-bullet">Native Performance Engine</div>
+              <div class="whatwedo-bullet">Unified Codebase Architectures</div>
+              <div class="whatwedo-bullet">Sensors &amp; Offline StorageSync</div>
+            </div>
+            <a href="services.html" class="whatwedo-link">LEARN MORE <span>&rarr;</span></a>
+          </div>
+          <div class="whatwedo-preview">
+            <div class="preview-phone">
+              <div class="phone-frame">
+                <div class="phone-notch"></div>
+                <div class="phone-label">[ SYSTEM EMULATOR ]</div>
+                <div class="phone-logo"><span>Flutter</span> Core</div>
+                <div class="phone-stats">
+                  <div class="phone-stat"><span>LOAD TIME</span><span class="val">0.12s</span></div>
+                  <div class="phone-stat"><span>SHARED CODE</span><span class="val">96%</span></div>
+                </div>
+              </div>
+              <div class="phone-btns">
+                <span class="phone-btn primary">FLUTTER</span>
+                <span class="phone-btn">R_NATIVE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab: AI Integrations -->
+        <div class="whatwedo-content" data-content="ai">
+          <div class="whatwedo-info">
+            <div class="whatwedo-info-label">[ ARTIFICIAL COGNITION ]</div>
+            <h3 class="whatwedo-info-title">AI INTEGRATIONS</h3>
+            <p class="whatwedo-info-desc">RAG pipelines, LLM agents, OpenAI &amp; Anthropic integrations built into your product. We integrate telemetry loops, neural vectors, and cognitive pipelines into operational software.</p>
+            <div class="whatwedo-bullets">
+              <div class="whatwedo-bullet">Vector Database Chunking</div>
+              <div class="whatwedo-bullet">Semantic Prompt Routing</div>
+              <div class="whatwedo-bullet">Autonomous Action Agents</div>
+            </div>
+            <a href="services.html" class="whatwedo-link">LEARN MORE <span>&rarr;</span></a>
+          </div>
+          <div class="whatwedo-preview">
+            <div class="preview-pipeline">
+              <div class="pipe-label">[ RAG RETRIEVAL PIPELINE ]</div>
+              <div class="pipe-step"><span class="pipe-icon">📄</span><span class="pipe-name">01_USER QUERY</span><span class="pipe-status">ACTIVE</span></div>
+              <div class="pipe-step active"><span class="pipe-icon">⚡</span><span class="pipe-name">02_VECTOR EMBEDDING</span><span class="pipe-status">ACTIVE</span></div>
+              <div class="pipe-step"><span class="pipe-icon">🔍</span><span class="pipe-name">03_CONTEXT RETRIEVAL</span><span class="pipe-status">ACTIVE</span></div>
+              <div class="pipe-step"><span class="pipe-icon">🧠</span><span class="pipe-name">04_HYBRID LLM OUTPUT</span><span class="pipe-status">ACTIVE</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab: Brand & Design -->
+        <div class="whatwedo-content" data-content="brand">
+          <div class="whatwedo-info">
+            <div class="whatwedo-info-label">[ CINEMATIC EXPERIENCE ]</div>
+            <h3 class="whatwedo-info-title">BRAND &amp; DESIGN</h3>
+            <p class="whatwedo-info-desc">Logo, identity system, product UX. Design that earns trust before a word is read. We balance layout density, colors, and typography to construct premium identity ecosystems.</p>
+            <div class="whatwedo-bullets">
+              <div class="whatwedo-bullet">WebGL Centerpiece Assets</div>
+              <div class="whatwedo-bullet">Custom CSS Fluid Spacing</div>
+              <div class="whatwedo-bullet">Interactive Sound Scapes</div>
+            </div>
+            <a href="services.html" class="whatwedo-link">LEARN MORE <span>&rarr;</span></a>
+          </div>
+          <div class="whatwedo-preview">
+            <div class="preview-brand">
+              <div class="brand-dots"></div>
+              <div class="brand-card">
+                <div class="brand-bar"></div>
+                <div class="brand-label">PRODUCT_UX</div>
+              </div>
+              <div class="brand-tabs">
+                <span class="brand-tab">WIREFRAME</span>
+                <span class="brand-tab">DESIGN</span>
+                <span class="brand-tab active">CINEMATIC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Preview -->
+  <section class="portfolio-section section" id="portfolio">
+    <div class="container-wide">
+      <div class="section-header reveal">
+        <div class="section-label">[ CASE STUDIES ]</div>
+        <h2 class="section-title section-title--metallic">Selected Shipments</h2>
+        <p class="section-subtitle">Interactive digital platforms, fluid interfaces, and scalable backend applications built for ambitious brands.</p>
+      </div>
+      <div class="portfolio-filters reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web Apps</button>
+        <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+        <button class="filter-btn" data-filter="enterprise">Enterprise</button>
+        <button class="filter-btn" data-filter="edtech">Ed-Tech/NGO</button>
+      </div>
+      <div class="portfolio-grid stagger-children reveal">
+        <!-- Project 1: Off-Kilt -->
+        <a href="https://off-kilt.com/" target="_blank" class="project-card" data-category="ecommerce">
+          <div class="project-card-header" style="background: linear-gradient(135deg, #1a0a12, #2d1020);">
+            <div class="category-bar" style="background: linear-gradient(90deg, #ec4899, #f43f5e);"></div>
+            <div class="demo-browser">
+              <div class="demo-dots"><span></span><span></span><span></span></div>
+              <div class="demo-url">off-kilt.com</div>
+            </div>
+            <div class="demo-preview demo-preview--offkilt"></div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-category" style="color: #ec4899;">E-COMMERCE</div>
+            <h5>Off-Kilt</h5>
+            <p>Premium customized apparel & street fashion commerce platform.</p>
+            <div class="project-card-tech">
+              <span>Next.js</span><span>Shopify API</span><span>Framer Motion</span>
+            </div>
+            <span class="project-card-link">Visit Live <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+          </div>
+        </a>
+        <!-- Project 2: Digital Vyapar Seva -->
+        <a href="https://www.digitalvyaparseva.com/" target="_blank" class="project-card" data-category="enterprise">
+          <div class="project-card-header" style="background: linear-gradient(135deg, #070913, #0b2545);">
+            <div class="category-bar" style="background: linear-gradient(90deg, #3b82f6, #8b5cf6);"></div>
+            <div class="demo-browser">
+              <div class="demo-dots"><span></span><span></span><span></span></div>
+              <div class="demo-url">digitalvyaparseva.com</div>
+            </div>
+            <div class="demo-preview demo-preview--dvs"></div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-category" style="color: #3b82f6;">ENTERPRISE</div>
+            <h5>Digital Vyapar Seva</h5>
+            <p>Enterprise software development, custom ERP systems & digital growth agency.</p>
+            <div class="project-card-tech">
+              <span>React</span><span>Node.js</span><span>Tailwind</span>
+            </div>
+            <span class="project-card-link">Visit Live <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+          </div>
+        </a>
+        <!-- Project 3: MyCityHub -->
+        <a href="https://mycityhub.in/" target="_blank" class="project-card" data-category="web">
+          <div class="project-card-header" style="background: linear-gradient(135deg, #f0fdf4, #dcfce7);">
+            <div class="category-bar" style="background: linear-gradient(90deg, #16a34a, #22c55e);"></div>
+            <div class="demo-browser" style="background: rgba(0,0,0,0.15);">
+              <div class="demo-dots"><span></span><span></span><span></span></div>
+              <div class="demo-url" style="color: rgba(0,0,0,0.4); background: rgba(0,0,0,0.06);">mycityhub.in</div>
+            </div>
+            <div class="demo-preview demo-preview--mycityhub">
+              <div class="demo-mock">
+                <span class="mock-logo">MyCityHub</span>
+                <div class="mock-search"></div>
+                <div class="mock-tags"><span>Electrician</span><span>Doctor</span><span>Salon</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-category" style="color: #22c55e;">WEB APPS</div>
+            <h5>MyCityHub</h5>
+            <p>India's smart local business directory platform — 10L+ businesses.</p>
+            <div class="project-card-tech">
+              <span>React</span><span>PostgreSQL</span><span>Google Maps</span>
+            </div>
+            <span class="project-card-link">Visit Live <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+          </div>
+        </a>
+        <!-- Project 4: Bridal Connect -->
+        <a href="https://bridalconnect.in/" target="_blank" class="project-card" data-category="ecommerce">
+          <div class="project-card-header" style="background: linear-gradient(135deg, #fffaf5, #fef3c7);">
+            <div class="category-bar" style="background: linear-gradient(90deg, #d97706, #f59e0b);"></div>
+            <div class="demo-browser" style="background: rgba(0,0,0,0.1);">
+              <div class="demo-dots"><span></span><span></span><span></span></div>
+              <div class="demo-url" style="color: rgba(0,0,0,0.4); background: rgba(0,0,0,0.06);">bridalconnect.in</div>
+            </div>
+            <div class="demo-preview demo-preview--bridal"></div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-category" style="color: #f59e0b;">E-COMMERCE</div>
+            <h5>Bridal Connect</h5>
+            <p>Luxury wedding planning marketplace — vendors, venues & services.</p>
+            <div class="project-card-tech">
+              <span>React</span><span>Strapi CMS</span><span>Stripe</span>
+            </div>
+            <span class="project-card-link">Visit Live <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+          </div>
+        </a>
+        <!-- Project 5: My Event Factory -->
+        <a href="https://myeventfactory.in/" target="_blank" class="project-card" data-category="web">
+          <div class="project-card-header" style="background: linear-gradient(135deg, #1e1b3a, #2d2a5e);">
+            <div class="category-bar" style="background: linear-gradient(90deg, #f97316, #ef4444);"></div>
+            <div class="demo-browser">
+              <div class="demo-dots"><span></span><span></span><span></span></div>
+              <div class="demo-url">myeventfactory.in</div>
+            </div>
+            <div class="demo-preview demo-preview--myevent"></div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-category" style="color: #f97316;">WEB APPS</div>
+            <h5>My Event Factory</h5>
+            <p>Premium event management & AV rental — weddings, corporate, live shows.</p>
+            <div class="project-card-tech">
+              <span>Next.js</span><span>Firebase RT</span><span>Tailwind</span>
+            </div>
+            <span class="project-card-link">Visit Live <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+          </div>
+        </a>
+        <!-- Project 6: Milanj -->
+        <a href="https://milanj.in/" target="_blank" class="project-card" data-category="enterprise">
+          <div class="project-card-header" style="background: linear-gradient(135deg, #fff5f5, #ffe4e4);">
+            <div class="category-bar" style="background: linear-gradient(90deg, #ff0000, #dc2626);"></div>
+            <div class="demo-browser" style="background: rgba(0,0,0,0.1);">
+              <div class="demo-dots"><span></span><span></span><span></span></div>
+              <div class="demo-url" style="color: rgba(0,0,0,0.4); background: rgba(0,0,0,0.06);">milanj.in</div>
+            </div>
+            <div class="demo-preview demo-preview--milanj"></div>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-category" style="color: #ff0000;">ENTERPRISE</div>
+            <h5>Milanj</h5>
+            <p>FinTech software — payment apps, eWallets, neo banking & loan management.</p>
+            <div class="project-card-tech">
+              <span>Next.js</span><span>Node.js</span><span>MongoDB</span>
+            </div>
+            <span class="project-card-link">Visit Live <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+          </div>
+        </a>
+      </div>
+      <div class="portfolio-cta reveal">
+        <a href="projects.html" class="btn btn-primary btn-shimmer">VIEW ALL SHIPMENTS</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Clients Say (Testimonials) -->
+  <section class="testimonials-section section">
+    <div class="container-wide">
+      <div class="section-header reveal">
+        <div class="section-label">[ REVIEWS ]</div>
+        <h2 class="section-title section-title--metallic">What Clients Say</h2>
+        <div class="testimonials-subtitle">Don't take our word for it.</div>
+      </div>
+      <div class="testimonials-grid stagger-children reveal">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">&ldquo;</div>
+          <p class="testimonial-text">Qubnix shipped our MVP in 6 weeks. The code quality was production-ready from day one — no tech debt handed off to us.</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: #f43f5e;">RM</div>
+            <div>
+              <div class="testimonial-name">ROHAN MEHTA</div>
+              <div class="testimonial-role">CEO, TECHSTARTUP</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">&ldquo;</div>
+          <p class="testimonial-text">The team understood our vision immediately and delivered beyond our expectations. They think like founders, not vendors.</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: #f97316;">PS</div>
+            <div>
+              <div class="testimonial-name">PRIYA SHARMA</div>
+              <div class="testimonial-role">PRODUCT MANAGER, GROWFAST</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">&ldquo;</div>
+          <p class="testimonial-text">Best development partner we've worked with. Transparent, fast, and the design sensibility is unmatched.</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: #8b5cf6;">AP</div>
+            <div>
+              <div class="testimonial-name">ARJUN PATEL</div>
+              <div class="testimonial-role">FOUNDER, DATAEDGE</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">&ldquo;</div>
+          <p class="testimonial-text">Our app hit the App Store in 8 weeks, bug-free. The flutter code is clean enough that our internal team can maintain it.</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: #10b981;">SG</div>
+            <div>
+              <div class="testimonial-name">SNEHA GUPTA</div>
+              <div class="testimonial-role">CTO, HEALTHNEXT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing-section section" id="pricing">
+    <div class="container-wide">
+      <div class="section-header reveal">
+        <div class="section-label">[ PRICING ]</div>
+        <h2 class="section-title section-title--metallic">Transparent Pricing</h2>
+        <p class="section-subtitle">Choose the plan that fits your project needs. All plans include our core commitment to quality.</p>
+      </div>
+      <div class="pricing-grid stagger-children reveal">
+        <!-- Card 1: Informative Web -->
+        <div class="pricing-card">
+          <div class="pricing-card-top">
+            <div>
+              <h5 class="pricing-title">INFORMATIVE WEB</h5>
+              <span class="pricing-desc">// Static web presence.</span>
+            </div>
+            <span class="pricing-timeline">[1 WEEK]</span>
+          </div>
+          <div class="pricing-divider"></div>
+          <div class="pricing-price">₹5K – ₹10K</div>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li><span class="pricing-dot"></span> Modern static landing page</li>
+            <li><span class="pricing-dot"></span> Fully responsive layout</li>
+            <li><span class="pricing-dot"></span> Interactive UI & animations</li>
+            <li><span class="pricing-dot"></span> Secure contact form</li>
+            <li><span class="pricing-dot"></span> Standard SEO optimization</li>
+            <li><span class="pricing-dot"></span> 30-day support warranty</li>
+          </ul>
+          <a href="contact.html?service=Informative+Web" class="pricing-btn pricing-btn-outline">GET INFORMATIVE WEB <span class="arrow">&rarr;</span></a>
+        </div>
+
+        <!-- Card 2: Dynamic Web -->
+        <div class="pricing-card">
+          <div class="pricing-card-top">
+            <div>
+              <h5 class="pricing-title">DYNAMIC WEB</h5>
+              <span class="pricing-desc">// Interactive application.</span>
+            </div>
+            <span class="pricing-timeline">[2-3 WEEKS]</span>
+          </div>
+          <div class="pricing-divider"></div>
+          <div class="pricing-price">₹10K – ₹20K</div>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li><span class="pricing-dot"></span> Dynamic CMS / Blog panel</li>
+            <li><span class="pricing-dot"></span> Admin control dashboard</li>
+            <li><span class="pricing-dot"></span> Secure database integration</li>
+            <li><span class="pricing-dot"></span> User authentication (Auth)</li>
+            <li><span class="pricing-dot"></span> Advanced SEO & Analytics</li>
+            <li><span class="pricing-dot"></span> 30-day support warranty</li>
+          </ul>
+          <a href="contact.html?service=Dynamic+Web" class="pricing-btn pricing-btn-outline">GET DYNAMIC WEB <span class="arrow">&rarr;</span></a>
+        </div>
+
+        <!-- Card 3: E-Commerce (Featured) -->
+        <div class="pricing-card featured">
+          <div class="pricing-badge">MOST POPULAR</div>
+          <div class="pricing-card-top">
+            <div>
+              <h5 class="pricing-title">E-COMMERCE</h5>
+              <span class="pricing-desc">// Digital storefront.</span>
+            </div>
+            <span class="pricing-timeline">[3-4 WEEKS]</span>
+          </div>
+          <div class="pricing-divider"></div>
+          <div class="pricing-price">₹15K – ₹25K</div>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li><span class="pricing-dot"></span> Product inventory catalog</li>
+            <li><span class="pricing-dot"></span> Shopping cart & user session</li>
+            <li><span class="pricing-dot"></span> Secure payment gateway integrations</li>
+            <li><span class="pricing-dot"></span> Order management dashboard</li>
+            <li><span class="pricing-dot"></span> E-commerce analytics tracking</li>
+            <li><span class="pricing-dot"></span> 30-day support warranty</li>
+          </ul>
+          <a href="contact.html?service=E-Commerce" class="pricing-btn pricing-btn-dark">GET E-COMMERCE <span class="arrow">&rarr;</span></a>
+        </div>
+
+        <!-- Card 4: Mobile App -->
+        <div class="pricing-card">
+          <div class="pricing-card-top">
+            <div>
+              <h5 class="pricing-title">ANDROID & IOS APP</h5>
+              <span class="pricing-desc">// Native mobile app.</span>
+            </div>
+            <span class="pricing-timeline">[4-6 WEEKS]</span>
+          </div>
+          <div class="pricing-divider"></div>
+          <div class="pricing-price">₹25K – ₹45K</div>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li><span class="pricing-dot"></span> Cross-platform app development</li>
+            <li><span class="pricing-dot"></span> App Store & Google Play launch</li>
+            <li><span class="pricing-dot"></span> Push notifications setup</li>
+            <li><span class="pricing-dot"></span> Location & hardware services</li>
+            <li><span class="pricing-dot"></span> User account synchronization</li>
+            <li><span class="pricing-dot"></span> 30-day support warranty</li>
+          </ul>
+          <a href="contact.html?service=Mobile+App" class="pricing-btn pricing-btn-outline">GET MOBILE APP <span class="arrow">&rarr;</span></a>
+        </div>
+
+        <!-- Card 5: Custom Software -->
+        <div class="pricing-card">
+          <div class="pricing-card-top">
+            <div>
+              <h5 class="pricing-title">CUSTOM SOFTWARE</h5>
+              <span class="pricing-desc">// Enterprise scalability.</span>
+            </div>
+            <span class="pricing-timeline">[FLEXIBLE]</span>
+          </div>
+          <div class="pricing-divider"></div>
+          <div class="pricing-price">₹50K – ₹10L</div>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li><span class="pricing-dot"></span> Tailored custom system logic</li>
+            <li><span class="pricing-dot"></span> Microservices & cloud architecture</li>
+            <li><span class="pricing-dot"></span> Advanced API integrations & webhooks</li>
+            <li><span class="pricing-dot"></span> Custom ML models / AI agents</li>
+            <li><span class="pricing-dot"></span> Full control & source code ownership</li>
+            <li><span class="pricing-dot"></span> 90-day support warranty</li>
+          </ul>
+          <a href="contact.html?service=Custom+Software" class="pricing-btn pricing-btn-outline">GET CUSTOM SOFTWARE <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section section">
+    <div class="container-wide">
+      <div class="section-header reveal">
+        <div class="section-label">[ ENQUIRIES ]</div>
+        <h2 class="section-title section-title--metallic">FAQ</h2>
+        <div class="faq-subtitle">Common questions.</div>
+      </div>
+      <div class="faq-list stagger-children reveal">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">WHAT'S YOUR PRICING MODEL?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">We work on a fixed-scope project basis or monthly dedicated retainers. No hourly tracking, no hidden surprises.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">WHO OWNS THE CODE AND DESIGN AFTER DELIVERY?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">You do. 100% IP ownership, assets, design files, and code repositories are transferred fully to your team upon project completion.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">HOW MANY REVISION ROUNDS ARE INCLUDED?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">We run iterative weekly reviews so you see progress live. We refine details in real-time until they match requirements, meaning there are no rigid limits on tweaks.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">WHAT TECH STACK DO YOU USE?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">React, Next.js, and TypeScript on web. Flutter and React Native for mobile. OpenAI, Anthropic, Langchain, and Node/Python backends for AI systems.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">DO YOU PROVIDE POST-LAUNCH SUPPORT?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes, we provide a 30-day warranty on sprints/products and offer ongoing support plans to keep systems monitored and optimized.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Homepage Contact Form -->
+  <section class="home-contact-section section">
+    <div class="container-wide">
+      <div class="section-header reveal">
+        <div class="section-label">[ GET IN TOUCH ]</div>
+        <h2 class="section-title section-title--metallic">Let's Build Something</h2>
+        <p class="section-subtitle">Tell us about your project and we'll get back to you within 24 hours.</p>
+      </div>
+      <div class="home-contact-form reveal">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="homeContactForm" novalidate>
+          <div class="form-group">
+            <label for="home-name">Your Name</label>
+            <input type="text" id="home-name" name="name" placeholder="John Doe" required minlength="2">
+            <span class="form-error" id="homeNameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="home-email">Email Address</label>
+            <input type="email" id="home-email" name="email" placeholder="john@company.com" required>
+            <span class="form-error" id="homeEmailError"></span>
+          </div>
+          <div class="form-group">
+            <label for="home-service">What do you need?</label>
+            <select id="home-service" name="service" required>
+              <option value="">Select a service...</option>
+              <option value="Informative Web">Informative Web</option>
+              <option value="Dynamic Web">Dynamic Web</option>
+              <option value="E-Commerce">E-Commerce</option>
+              <option value="Mobile App">Android & iOS App</option>
+              <option value="Custom Software">Custom Software</option>
+              <option value="AI Integration">AI Integration</option>
+              <option value="Brand & Design">Brand & Design</option>
+              <option value="Something else">Something else</option>
+            </select>
+            <span class="form-error" id="homeServiceError"></span>
+          </div>
+          <div class="form-group">
+            <label for="home-message">Project Details</label>
+            <textarea id="home-message" name="message" placeholder="Tell us about your project, timeline, and budget..." required minlength="10"></textarea>
+            <span class="form-error" id="homeMessageError"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-large btn-shimmer w-full">SEND MESSAGE</button>
+          <p class="form-note">We typically reply within a few hours during business hours (IST).</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container-wide">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="Mystosoft Logos/Mystosoft footer logo.png" alt="Mystosoft" style="height: 32px;">
+          </div>
+          <p class="footer-tagline">We build software that ships — web, mobile, and AI for ambitious founders.</p>
+          <div class="footer-status">
+            <span class="dot"></span>
+            [ Mystosoft Pvt. Ltd. // core active ]
+          </div>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/mystosoft" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/mystosoft" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://wa.me/916370773029" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h5>Product</h5>
+            <a href="services.html">Services</a>
+            <a href="projects.html">Work</a>
+            <a href="#pricing">Pricing</a>
+          </div>
+          <div class="footer-column">
+            <h5>Company</h5>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="careers.html">Careers</a>
+          </div>
+          <div class="footer-column">
+            <h5>Connect</h5>
+            <a href="https://wa.me/916370773029" target="_blank">
+              <span class="footer-whatsapp" style="display:inline-flex; padding:4px 10px; font-size:0.7rem;">
+                <span class="dot"></span> SUPPORT_ONLINE
+              </span>
+            </a>
+            <a href="tel:+916370773029">+91 6370773029</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2024 Mystosoft Pvt. Ltd. All rights reserved.</span>
+        <span style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.06em;">[ SYSTEM PORT: ENG_09X ]</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/globe.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="js/projects.js"></script>
+  <script>
+    // Initialize globe and grid
+    initGlobe('globeCanvas');
+    initGrid('gridCanvas');
+
+    // Velocity counter
+    let vel = 0;
+    window.addEventListener('scroll', () => {
+      vel = Math.min(Math.abs(window.scrollY * 0.01), 9.99);
+    }, { passive: true });
+    setInterval(() => {
+      const el = document.getElementById('velCounter');
+      if (el) el.textContent = vel.toFixed(2);
+    }, 50);
+
+    // Loading screen canvas animation
+    (function() {
+      const canvas = document.getElementById('loadingCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      const particles = [];
+      for (let i = 0; i < 50; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 1.5 + 0.5,
+          dx: (Math.random() - 0.5) * 0.5,
+          dy: (Math.random() - 0.5) * 0.5,
+          o: Math.random() * 0.5 + 0.1,
+        });
+      }
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 26, 26, ${p.o})`;
+          ctx.fill();
+          p.x += p.dx;
+          p.y += p.dy;
+          if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+        });
+        if (!document.querySelector('.loading-screen.hidden')) requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+  </script>
+
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Homepage Contact Form Validation
+    (function() {
+      const form = document.getElementById('homeContactForm');
+      if (!form) return;
+      const nameInput = document.getElementById('home-name');
+      const emailInput = document.getElementById('home-email');
+      const serviceInput = document.getElementById('home-service');
+      const messageInput = document.getElementById('home-message');
+
+      function showError(input, errorId, msg) {
+        input.classList.add('error');
+        document.getElementById(errorId).textContent = msg;
+      }
+      function clearError(input, errorId) {
+        input.classList.remove('error');
+        document.getElementById(errorId).textContent = '';
+      }
+      function validateName() {
+        if (nameInput.value.trim().length < 2) { showError(nameInput, 'homeNameError', 'Name must be at least 2 characters.'); return false; }
+        clearError(nameInput, 'homeNameError'); return true;
+      }
+      function validateEmail() {
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) { showError(emailInput, 'homeEmailError', 'Please enter a valid email.'); return false; }
+        clearError(emailInput, 'homeEmailError'); return true;
+      }
+      function validateService() {
+        if (!serviceInput.value) { showError(serviceInput, 'homeServiceError', 'Please select a service.'); return false; }
+        clearError(serviceInput, 'homeServiceError'); return true;
+      }
+      function validateMessage() {
+        if (messageInput.value.trim().length < 10) { showError(messageInput, 'homeMessageError', 'Message must be at least 10 characters.'); return false; }
+        clearError(messageInput, 'homeMessageError'); return true;
+      }
+      nameInput.addEventListener('blur', validateName);
+      emailInput.addEventListener('blur', validateEmail);
+      serviceInput.addEventListener('change', validateService);
+      messageInput.addEventListener('blur', validateMessage);
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const isValid = validateName() & validateEmail() & validateService() & validateMessage();
+        if (!isValid) return;
+        try {
+          const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+          if (res.ok) { form.reset(); window.location.href = 'contact.html?submitted=true'; }
+          else { alert('Something went wrong. Please try again.'); }
+        } catch { alert('Network error. Please try again.'); }
+      });
+    })();
+  </script>
+</body>
+</html>
